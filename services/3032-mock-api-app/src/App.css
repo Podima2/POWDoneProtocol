@@ -1,0 +1,37 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% of the viewport height */
+  margin: 0;
+}
+
+.app-header {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 1%; /* 2% for the header, 1% padding top and bottom */
+}
+
+.add-button {
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  flex-grow: 1; /* grow to take up 49% of the remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minus-button {
+  background-color: #e14444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  flex-grow: 1; /* grow to take up 49% of the remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

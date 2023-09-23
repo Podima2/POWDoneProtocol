@@ -1,0 +1,15 @@
+api2.powdone.com {
+	reverse_proxy localhost:3031
+	log {
+		output file /var/www/caddy/api2.powdone.com.log
+	}
+	encode gzip
+}
+
+counter-app.powdone.com {
+	reverse_proxy localhost:3032
+	log {
+		output file /var/www/caddy/counter-app.powdone.com.log
+	}
+	encode gzip
+}
