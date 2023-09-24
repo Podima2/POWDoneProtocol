@@ -106,7 +106,7 @@ import { AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
 
 const pdSdk = PowDoneSDK;
 
-const RPC = 'http://127.0.0.1:8545';
+const RPC = process.env.RPC ?? 'http://127.0.0.1:8545';
 
 
 export default function Home() {
@@ -724,10 +724,12 @@ export default function Home() {
                                 mode="single"
                                 selected={date}
                                 onSelect={(e) => {
-                                  const date = new Date(e);
-                                  const timestamp = Math.floor(date.getTime() / 1000);
-                                  setDate(e);
-                                  handleSelectChange(timestamp, 'date')
+                                  if (e) {
+                                    const date = new Date(e);
+                                    const timestamp = Math.floor(date.getTime() / 1000);
+                                    setDate(e);
+                                    handleSelectChange(timestamp, 'date')
+                                  }
                                 }}
                                 initialFocus
                               />

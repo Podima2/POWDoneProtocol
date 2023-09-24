@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  env: {
+    RPC: "https://sepolia-rpc.scroll.io"
+  }
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -51,3 +51,7 @@ POWDone is designed to be a protocol for all habit tracking applications, the id
 
 > GitHub [@Podima2](https://github.com/Podima2) &nbsp;&middot;&nbsp;
 > Twitter [@The_Game_2030](https://twitter.com/The_Game_2030)
+
+Contracts:
+deploying "PowDoneToken" (tx: 0xa208287b93a6e6b65b04445c49997709b2db006b822c6f88dcf48ac0408aab35)...: deployed at 0x1006b674614323ed2fa09b4e862Bc9d81Ecd6284 with 1144941 gas
+deploying "PowDoneGoal" (tx: 0xf7ac2daf6fe863c558722b42b11da15e9efda6755245c1d53ebd0d1a893b014f)...: deployed at 0x6e6ac38BBbaBcD4652790D0Dd9f370412D1b364E with 2242710 gas

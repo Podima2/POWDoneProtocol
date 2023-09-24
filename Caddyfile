@@ -13,19 +13,3 @@ counter-app.powdone.com {
 	}
 	encode gzip
 }
-
-chain.powdone.com {
-	reverse_proxy localhost:8545
-	log {
-		output file /var/www/caddy/chain.powdone.com.log
-	}
-	encode gzip
-}
-
-explorer.powdone.com {
-	reverse_proxy localhost:3033
-	log {
-		output file /var/www/caddy/explorer.powdone.com.log
-	}
-	encode gzip
-}

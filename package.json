@@ -21,6 +21,7 @@
     "caddy-start": "sudo systemctl start caddy",
     "caddy-stop": "sudo systemctl stop caddy",
     "caddy-2019": "sudo lsof -i :2019",
+    "80": "cd ./services/80-app && bun run start",
     "3031": "cd ./services/3031-mock-api && bun start",
     "3032": "cd ./services/3032-mock-api-app && PORT=3032 serve -s build",
     "3033": "bun start:chain"
