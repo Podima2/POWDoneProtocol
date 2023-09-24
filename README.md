@@ -100,16 +100,24 @@ POWDone is designed to be a protocol for all habit tracking applications, the id
 
 ## Scroll
 
-- PowDoneToken: https://sepolia.scrollscan.dev/address/0x1006b674614323ed2fa09b4e862Bc9d81Ecd6284
+### PowDoneToken 
+- 0x1006b674614323ed2fa09b4e862Bc9d81Ecd6284
+- https://sepolia.scrollscan.dev/address/0x1006b674614323ed2fa09b4e862Bc9d81Ecd6284
 - TX: 0xa208287b93a6e6b65b04445c49997709b2db006b822c6f88dcf48ac0408aab35
 
-- PowDoneGoal: https://sepolia.scrollscan.dev/address/0x6e6ac38BBbaBcD4652790D0Dd9f370412D1b364E
+### PowDoneGoal
+- 0x6e6ac38BBbaBcD4652790D0Dd9f370412D1b364E
+- https://sepolia.scrollscan.dev/address/0x6e6ac38BBbaBcD4652790D0Dd9f370412D1b364E
 - TX: 0xf7ac2daf6fe863c558722b42b11da15e9efda6755245c1d53ebd0d1a893b014f
 
 ## Arbitrum Stylus Testnet
 
-- PowDoneToken: https://stylus-testnet-explorer.arbitrum.io/address/0x5ADC67C7c11fDed1776A13785a75f4e70bCC1349
+### PowDoneToken: 
+- 0x5ADC67C7c11fDed1776A13785a75f4e70bCC1349
+- https://stylus-testnet-explorer.arbitrum.io/address/0x5ADC67C7c11fDed1776A13785a75f4e70bCC1349
 - TX: 0x94c7c27376cfb7f47fa5fe6791d44ff6a345203231adb600335208a5f04c7c91
 
-- PowDoneGoal: https://stylus-testnet-explorer.arbitrum.io/address/0xA461fec87594b02cA215BF4988E261b7B4de1a45
+### PowDoneGoal:
+- 0xA461fec87594b02cA215BF4988E261b7B4de1a45
+- https://stylus-testnet-explorer.arbitrum.io/address/0xA461fec87594b02cA215BF4988E261b7B4de1a45
 - TX: 0x2ffa7f8a0d9fc6a9278bb4b13c49f306c46eb220b05a79986b60d1400caccfdb
