@@ -19,7 +19,7 @@
 
 # Demo
 
-- https://powdone.com/ B2C Consumer app product built using this SDK.
+- https://powdone.com/ B2C Consumer app product built using this SDK, with authentication mechanisms empowered by the Lit Protocol.
 - https://counter-app.powdone.com/ -  "Proof of Work" app - a demo use case where the user must press the ADD button at least 5 times for Lit Action to use the PKP to sign.
 
 # SDK
