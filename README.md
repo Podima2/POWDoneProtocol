@@ -14,6 +14,38 @@
   </a>
 </p>
 
+# Stack
+
+- Lit Protocol
+- UMA
+- Scroll
+- Arbitrium
+- Filecoin [Web3Storage](https://github.com/Podima2/POWDoneProtocol/blob/30547697cbefc8d64a52d7f92a5878bc847a3d93/src/helpers/storage-helper.ts#L14)
+
+# SDK
+
+entry points:
+- nodejs https://github.com/Podima2/POWDoneProtocol/blob/master/src/index.node.ts
+- browser https://github.com/Podima2/POWDoneProtocol/blob/master/src/index.browser.ts
+
+## Lit Protocol
+https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/lit-helper/lit-helper.ts
+
+## POWD Contracts Helper
+https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/contracts-helper.ts
+
+
+## 
+
+# Smart contracts
+
+- PowDoneGoal
+https://github.com/Podima2/POWDoneProtocol/blob/master/services/3033-smart-contracts/packages/hardhat/contracts/PowDoneGoal.sol
+
+- PowDoneToken
+https://github.com/Podima2/POWDoneProtocol/blob/master/services/3033-smart-contracts/packages/hardhat/contracts/PowDoneToken.sol
+
+
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#Short Description">Short Description</a> •
@@ -52,6 +84,20 @@ POWDone is designed to be a protocol for all habit tracking applications, the id
 > GitHub [@Podima2](https://github.com/Podima2) &nbsp;&middot;&nbsp;
 > Twitter [@The_Game_2030](https://twitter.com/The_Game_2030)
 
-Contracts:
-deploying "PowDoneToken" (tx: 0xa208287b93a6e6b65b04445c49997709b2db006b822c6f88dcf48ac0408aab35)...: deployed at 0x1006b674614323ed2fa09b4e862Bc9d81Ecd6284 with 1144941 gas
-deploying "PowDoneGoal" (tx: 0xf7ac2daf6fe863c558722b42b11da15e9efda6755245c1d53ebd0d1a893b014f)...: deployed at 0x6e6ac38BBbaBcD4652790D0Dd9f370412D1b364E with 2242710 gas
+# Contracts
+
+## Scroll
+
+- PowDoneToken: https://sepolia.scrollscan.dev/address/0x1006b674614323ed2fa09b4e862Bc9d81Ecd6284
+- TX: 0xa208287b93a6e6b65b04445c49997709b2db006b822c6f88dcf48ac0408aab35
+
+- PowDoneGoal: https://sepolia.scrollscan.dev/address/0x6e6ac38BBbaBcD4652790D0Dd9f370412D1b364E
+- TX: 0xf7ac2daf6fe863c558722b42b11da15e9efda6755245c1d53ebd0d1a893b014f
+
+## Arbitrum Stylus Testnet
+
+- PowDoneToken: https://stylus-testnet-explorer.arbitrum.io/address/0x5ADC67C7c11fDed1776A13785a75f4e70bCC1349
+- TX: 0x94c7c27376cfb7f47fa5fe6791d44ff6a345203231adb600335208a5f04c7c91
+
+- PowDoneGoal: https://stylus-testnet-explorer.arbitrum.io/address/0xA461fec87594b02cA215BF4988E261b7B4de1a45
+- TX: 0x2ffa7f8a0d9fc6a9278bb4b13c49f306c46eb220b05a79986b60d1400caccfdb
