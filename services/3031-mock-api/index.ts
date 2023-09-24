@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import IPFS from '@infura/sdk/dist/src/services/ipfsService';
 const cors = require('cors');
 
@@ -6,7 +8,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-app.use(cors({ origin: '*' }));
+app.use(cors());
 app.use(bodyParser.json());
 
 const port = PORT;

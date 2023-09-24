@@ -1,4 +1,4 @@
-// Publish to Scroll Network
+// Publish to the Scroll Network
 import { createGoalContract, getFundsFromFaucet, initGOALTokenState } from "./helpers/contracts-helper";
 import { createWallet } from './helpers/wallet-helper';
 import { permitPKPToUseLitAction, createAuthSig, createLitClient } from './helpers/lit-helper/lit-helper';
@@ -8,9 +8,9 @@ import { ethers } from "ethers";
 
 const action = process.argv.slice(2)[0];
 
-console.log("running action:", action);
+console.log("Running action:", action);
 
-// if arg is init
+// If the argument is 'init'
 if (action === 'init') {
   const wallet = createWallet();
   await getFundsFromFaucet(wallet.address);
@@ -31,20 +31,20 @@ if (action === 'set-task') {
   const wallet = createWallet();
   const goalContract = createGoalContract(wallet);
 
-  // input params
+  // Input parameters
   const description = getArgValue('description', "Description Text");
   const verificationMethod = getArgValue('verificationMethod', 0);
   const stake = getArgValue('stake', 100000); // Needs to be checked
 
-  // verfication methods
+  // Verification methods
   // 0 = LitAction
   // 1 = UMA
   // 2 = Supervisor
   // 3 = Blockchain
 
-  // When user chooses LitAction as a verification method to be used for their task
-  // For example, I know that you also run a grant program, so let's say when GitHub commits is more than 10 (which could be used to monitor Grant), you can also link each commit to an AI model that checks if the requirements or milestones of the code is being met.
-  // The code MUST be public on the UI that the user is commited to.
+  // When the user chooses LitAction as a verification method to be used for their task
+  // For example, I know that you also run a grant program, so let's say when GitHub commits is more than 10 (which could be used to monitor Grant), you can also link each commit to an AI model that checks if the requirements or milestones of the code are being met.
+  // The code MUST be public on the UI that the user is committed to.
   if (verificationMethod === 0) {
     let conditionCode = `// 2
     (async () => {
@@ -54,7 +54,7 @@ if (action === 'set-task') {
       const counterRes = await fetch('https://api2.powdone.com/counter');
       const counter = (await counterRes.json()).counter;
       
-      // COMMITED CONDITION, CAN'T BE CHANGED AFTER
+      // COMMITTED CONDITION, CAN'T BE CHANGED AFTER
       if(counter >= 5){
         console.log("YOU ARE VERIFIED!!");
         const sigShare = await LitActions.signEcdsa({
@@ -67,7 +67,7 @@ if (action === 'set-task') {
       }
     })();`;
 
-    // upload to ipfs
+    // Upload to IPFS
     const storageClient = createStorageClient();
     const ipfsId = await storageClient.upload(conditionCode);
     const ipfsHex = convertIPFSHashToHex(ipfsId);
@@ -77,7 +77,7 @@ if (action === 'set-task') {
     const messageHash = ethers.hexlify(ipfsHash);
     console.log("⭐️ messageHash", messageHash);
 
-    // mint grant burn
+    // Mint, grant, burn
     const mintGrantBurn = await permitPKPToUseLitAction(wallet, ipfsId);
     console.log("mintGrantBurn", mintGrantBurn);
 
@@ -94,7 +94,7 @@ if (action === 'set-task') {
     await tx.wait();
 
     console.log("Task set!");
-    console.log("you will need this to mark the task as achieved:");
+    console.log("You will need this to mark the task as achieved:");
     console.log("- ipfsId", ipfsId);
     console.log("- tokenId", mintGrantBurn.pkp.tokenId);
     console.log('- publicKey', mintGrantBurn.pkp.pubKey);
@@ -126,7 +126,7 @@ if (action === 'done') {
 
   const taskIndex = getArgValue('taskIndex', 0);
 
-  console.log("getting signature from lit protocol...");
+  console.log("Getting signature from lit protocol...");
 
   // GETTING THIS BACK FROM SMART CONTRACT
   const ipfsId = "QmU3ioRSFauRLay9BuGEv1U7gYjqRXSFhFYJuvtX2ey2Aw";
@@ -135,19 +135,19 @@ if (action === 'done') {
   // bytes34
   const ipfsHex = convertIPFSHashToHex(ipfsId);
 
-  // get bytes size
+  // Get bytes size
   console.log("ipfsHex.length", ipfsHex.length);
 
   const messageHash = ethers.getBytes(ethers.id(ipfsHex));
   console.log("messageHash", messageHash);
   console.log("messageHash.length", messageHash.length);
 
-  // messageHash in hex
+  // MessageHash in hex
   console.log("⭐️ messageHash in hex", ethers.hexlify(messageHash));
 
-  // Anyone can use thethe burnt PKP to sign the messageHash
+  // Anyone can use the burnt PKP to sign the messageHash
   const res = await litClient.executeJs({
-    authSig, // fullfill the requirements for executeJs and lit nodes
+    authSig, // Fulfill the requirements for executeJs and lit nodes
     ipfsId: ipfsId,
     jsParams: {
       toSign: messageHash,
@@ -187,14 +187,14 @@ if (action === 'done') {
   try {
     const tx = await goalContract.markDone(
       taskIndex,
-      signature // evidence
+      signature // Evidence
     );
     await tx.wait();
   } catch (e) {
     console.log("e", e);
   }
 
-  console.log("Marked Archieved!", taskIndex);
+  console.log("Marked Achieved!", taskIndex);
 }
 
 if (action === 'verify') {
@@ -203,10 +203,10 @@ if (action === 'verify') {
   // const authSig = await createAuthSig(wallet);
   const goalContract = createGoalContract(wallet);
 
-  // input params
+  // Input parameters
   const taskIndex = getArgValue('taskIndex', 0);
 
-  // verify on chain
+  // Verify on chain
   const verifyTx = await goalContract.verify(taskIndex, wallet.address);
   await verifyTx.wait();
 
@@ -218,8 +218,8 @@ if (action === 'mintgrantburn') {
   const storageClient = createStorageClient();
   const litClient = await createLitClient();
 
-  // determinisitcally generate a hash
-  // We have to check the signature returned by the burnt PKP to veryify the 
+  // Deterministically generate a hash
+  // We have to check the signature returned by the burnt PKP to verify the 
   // original hash message (IPFS hash) is the same as the one we have
   
   let code = `(async () => {
@@ -233,7 +233,7 @@ if (action === 'mintgrantburn') {
   });
 })();`;
 
-  // main
+  // Main
   const authSig = await createAuthSig(wallet);
   console.log("authSig", authSig);
   const ipfsId = await storageClient.upload(code);
@@ -241,7 +241,7 @@ if (action === 'mintgrantburn') {
 
   // process.exit(0);
 
-  // mint grant burn
+  // Mint, grant, burn
   const mintGrantBurn = await permitPKPToUseLitAction(wallet, ipfsId);
 
   console.log("mintGrantBurn", mintGrantBurn);

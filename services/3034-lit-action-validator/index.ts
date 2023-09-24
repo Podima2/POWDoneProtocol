@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
-import { TaskAchievedEvent, TaskSetEvent, TaskVerifiedEvent } from './contracts/Goal';
-import { createGoalContract } from './helpers/contracts-helper';
-import { createWallet } from './helpers/wallet-helper';
+import { TaskAchievedEvent, TaskSetEvent, TaskVerifiedEvent } from '../../src/contracts/PowDoneGoal';
+import { createGoalContract } from '../../src/helpers/contracts-helper';
+import { createWallet } from '../../src/helpers/wallet-helper';
 console.log("Verification Service Started");
 
 // types
@@ -14,10 +14,11 @@ const goalContract = createGoalContract(wallet);
 goalContract.on(goalContract.getEvent('TaskSet'), (
   user,
   description,
-  verificationMethod,3034
+  verificationMethod,
   verificationMaterial,
   verificationAddress,
   stake,
+  deadline,
   e
 ) => {
 
@@ -33,17 +34,17 @@ goalContract.on(goalContract.getEvent('TaskSet'), (
 });
 
 
-// goalContract.on(goalContract.getEvent('TaskAchieved'), (user, taskIndex) => {
+goalContract.on(goalContract.getEvent('TaskAchieved'), (user, taskIndex) => {
 
-//   const e: TaskAchievedEvent.OutputObject = {
-//     user,
-//     taskIndex: parseInt(taskIndex) as any
-//   }
+  const e: TaskAchievedEvent.OutputObject = {
+    user,
+    taskIndex: parseInt(taskIndex) as any
+  }
 
-//   console.log("🚨 Someone achieved a task!");
-//   console.log("User:", e.user);
-//   console.log("Task Index:", e.taskIndex);
-// });
+  console.log("🚨 Someone achieved a task!");
+  console.log("User:", e.user);
+  console.log("Task Index:", e.taskIndex);
+});
 
 goalContract.on(goalContract.getEvent('TaskVerified'), (user, success) => {
 

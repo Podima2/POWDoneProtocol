@@ -4,7 +4,7 @@ try {
   await esbuild.build({
     entryPoints: ["./src/index.node.ts", "./src/index.browser.ts"],
     bundle: true,
-    outdir: "./services/80-app/lib",
+    outdir: "./services/3030-app/lib",
     globalName: "PowDoneSDK",
     alias: {
       crypto: "crypto-browserify",
@@ -22,8 +22,8 @@ try {
     bundle: true,
   });
   const outfiles = [
-    "./services/80-app/lib/index.node.js",
-    "./services/80-app/lib/index.browser.js",
+    "./services/3030-app/lib/index.node.js",
+    "./services/3030-app/lib/index.browser.js",
   ];
 
   outfiles.forEach((file) => {
