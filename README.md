@@ -14,9 +14,12 @@
   </a>
 </p>
 
+![](https://raw.githubusercontent.com/Podima2/POWDoneProtocol/master/1.png)
+![](https://raw.githubusercontent.com/Podima2/POWDoneProtocol/master/2.png)
+
 # Demo
 
-- https://powdone.com/ :: Consumer app product that built using this SDK 
+- https://powdone.com/ :: B2C Consumer app product that built using this SDK 
 - https://counter-app.powdone.com/ - "Proof of Work" app - a demo use case where user must press the ADD button at least 5 times in order for Lit Action to use the PKP to sign. 
 
 # SDK
