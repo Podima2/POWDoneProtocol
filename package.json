@@ -1,5 +1,20 @@
 {
+  "name": "powdone-protocol",
+  "module": "index.ts",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
   "scripts": {
+    "fix": "bun ./fixcode.ts",
+    "dev": "bun ./src/actions.ts",
+    "start:ecosystem": "concurrently \"bun start:chain\" \"bun start:explorer\"",
+    "start:chain": "cd ./scaffold-eth-2 && bun chain",
+    "start:explorer": "cd ./scaffold-eth-2 && PORT=3200 bun start",
+    "start:services": "bun --watch ./src/verification-service.ts",
+    "deploy:contracts": "cd ./scaffold-eth-2 && bun run deploy && cd ../ && bun run typechain && bun run dle",
+    "compile:contracts": "cd ./scaffold-eth-2 && bun run compile",
+    "typechain": "bun ./types.ts",
+    "dle": "bun run build.js",
     "up": "pm2 start ecosystem.config.js",
     "restart": "pm2 restart all",
     "down": "pm2 delete all",
@@ -9,5 +24,42 @@
     "caddy-2019": "sudo lsof -i :2019",
     "3031": "cd ./services/3031-mock-api && bun start",
     "3032": "cd ./services/3032-mock-api-app && PORT=3032 serve -s build"
+  },
+  "devDependencies": {
+    "browserify-fs": "^1.0.0",
+    "buffer": "^6.0.3",
+    "bun-types": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.3",
+    "util": "^0.12.5",
+    "vm-browserify": "^1.1.2"
+  },
+  "dependencies": {
+    "@infura/sdk": "^2.4.3",
+    "@lit-protocol/contracts-sdk": "^2.2.54",
+    "@lit-protocol/lit-node-client": "2.2.54",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@typechain/ethers-v6": "0.5.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "concurrently": "^8.2.1",
+    "esbuild": "^0.19.3",
+    "ethers": "^6.7.1",
+    "express": "^4.18.2",
+    "ipfs-http-client": "^60.0.1",
+    "ipfs-only-hash": "^4.0.0",
+    "lit-siwe": "^1.1.8",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typechain": "8.3.1",
+    "web3.storage": "^4.5.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
