@@ -40,7 +40,7 @@
 ## 1. Lit Protocol
 - [Lit Helper](https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/lit-helper/lit-helper.ts)
 
-  - Notable implementations:
+  - PKP Ethers Wallet Fixes:
     - [x] [Added call method to pkp ethers wallet to execute contract calls through pkps](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/components/PowDoneWallet.tsx#L72)
     - [x] [Utility to populate tx when using pkp to call contract methods.](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L110) usage in [mintgrantburn](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L167)
   - Tests
