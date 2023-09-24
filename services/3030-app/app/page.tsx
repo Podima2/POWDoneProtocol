@@ -6,16 +6,6 @@ import bs58 from 'bs58';
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-
-import {
   Alert,
   AlertDescription,
   AlertTitle,
