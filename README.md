@@ -27,6 +27,10 @@
   
   "Proof of Work" app - a demo use case where the user must press the ADD button at least 5 times for Lit Action to use the PKP to sign.
 
+- https://api2.powdone.com/counter
+
+  The aforementioned demo will update the counter for this API to ensure it meets the predetermined conditions on Lit Action and signs with PKP.
+
 # SDK
 
 - entry points:
