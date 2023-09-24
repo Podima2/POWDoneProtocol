@@ -19,8 +19,8 @@
 
 # Demo
 
-- https://powdone.com/ :: B2C Consumer app product that built using this SDK 
-- https://counter-app.powdone.com/ - "Proof of Work" app - a demo use case where user must press the ADD button at least 5 times in order for Lit Action to use the PKP to sign. 
+- https://powdone.com/ B2C Consumer app product built using this SDK.
+- https://counter-app.powdone.com/ -  "Proof of Work" app - a demo use case where the user must press the ADD button at least 5 times for Lit Action to use the PKP to sign.
 
 # SDK
 
@@ -36,15 +36,15 @@
 - [Lit Helper](https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/lit-helper/lit-helper.ts)
 
   - Notable implementations:
-    - [x] [added call method to pkp ethers wallet in order to do contract calls through pkps](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/components/PowDoneWallet.tsx#L72)
-    - [x] [utility to populate tx when using pkp to call contract methods](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L110) usage in [mintgrantburn](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L167)
+    - [x] [Added call method to pkp ethers wallet to execute contract calls through pkps](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/components/PowDoneWallet.tsx#L72)
+    - [x] [Utility to populate tx when using pkp to call contract methods.](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L110) usage in [mintgrantburn](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L167)
   - Tests
-    - browser
+    - Browser
       - [x] [setTask flow](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/app/page.tsx#L1074)
       - [x] [fetchTasks flow](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/app/page.tsx#L369)
       - [x] [markDone flow](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/app/page.tsx#L453-L460) (unable to test)
       - [] verify
-    - [nodejs test script](https://github.com/Podima2/POWDoneProtocol/blob/master/src/actions.ts)
+    - [Node.js test script](https://github.com/Podima2/POWDoneProtocol/blob/master/src/actions.ts)
       - [x] setTask tested
       - [x] fetchTasks tested
       - [x] markDone tested 
