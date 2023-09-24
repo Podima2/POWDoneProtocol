@@ -29,7 +29,19 @@ entry points:
 - browser https://github.com/Podima2/POWDoneProtocol/blob/master/src/index.browser.ts
 
 ## Lit Protocol
-https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/lit-helper/lit-helper.ts
+
+- [Lit Helper](https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/lit-helper/lit-helper.ts)
+
+  - Notable implementations:
+    - [x] [added call method to pkp ethers wallet in order to do contract calls through pkps](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/components/PowDoneWallet.tsx#L72)
+    - [x] [utility to populate tx when using pkp to call contract methods](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L110) usage in [mintgrantburn](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/src/helpers/lit-helper/lit-helper.ts#L167)
+  - Tests
+    - browser
+      - [setTask flow](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/app/page.tsx#L1074)
+      - [fetchTasks flow](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/app/page.tsx#L369)
+      - [markDone flow](https://github.com/Podima2/POWDoneProtocol/blob/fe8ac61e519dafad6776d9430a03225be6915fb2/services/3030-app/app/page.tsx#L453-L460) (unable to test)
+    - [nodejs test script](https://github.com/Podima2/POWDoneProtocol/blob/master/src/actions.ts)
+     
 
 ## POWD Contracts Helper
 https://github.com/Podima2/POWDoneProtocol/blob/master/src/helpers/contracts-helper.ts
