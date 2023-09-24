@@ -1,18 +1,17 @@
 {
   "name": "powdone-protocol",
   "module": "index.ts",
-  "type": "module",
   "license": "MIT",
   "private": true,
   "scripts": {
     "fix": "bun ./fixcode.ts",
     "dev": "bun ./src/actions.ts",
     "start:ecosystem": "concurrently \"bun start:chain\" \"bun start:explorer\"",
-    "start:chain": "cd ./scaffold-eth-2 && bun chain",
-    "start:explorer": "cd ./scaffold-eth-2 && PORT=3200 bun start",
+    "start:chain": "cd ./services/3033-smart-contracts && bun chain",
+    "start:explorer": "cd ./services/3033-smart-contracts && PORT=3033 bun start",
     "start:services": "bun --watch ./src/verification-service.ts",
-    "deploy:contracts": "cd ./scaffold-eth-2 && bun run deploy && cd ../ && bun run typechain && bun run dle",
-    "compile:contracts": "cd ./scaffold-eth-2 && bun run compile",
+    "deploy:contracts": "cd ./services/3033-smart-contracts && bun run deploy && cd ../ && bun run typechain && bun run dle",
+    "compile:contracts": "cd ./services/3033-smart-contracts && bun run compile",
     "typechain": "bun ./types.ts",
     "dle": "bun run build.js",
     "up": "pm2 start ecosystem.config.js",
@@ -23,7 +22,8 @@
     "caddy-stop": "sudo systemctl stop caddy",
     "caddy-2019": "sudo lsof -i :2019",
     "3031": "cd ./services/3031-mock-api && bun start",
-    "3032": "cd ./services/3032-mock-api-app && PORT=3032 serve -s build"
+    "3032": "cd ./services/3032-mock-api-app && PORT=3032 serve -s build",
+    "3033": "bun start:chain"
   },
   "devDependencies": {
     "browserify-fs": "^1.0.0",
